@@ -1,4 +1,11 @@
 const { Client, MessageMedia, LocalAuth } = require('whatsapp-web.js');
+const express = require('express')
+const app = express()
+app.get('/', function (req, res) {
+    res.send('Hello World')
+  })
+  
+  app.listen(process.env.PORT || 3000)
 const client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: { headless: true },
